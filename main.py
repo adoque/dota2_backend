@@ -74,8 +74,8 @@ async def get_heroes_by_role(role: str):
 @app.post("/api/gemini/advice")
 async def get_gemini_dota_advice(request: Request):
     data = await request.json()
-    hero = data.get("hero", "Invoker")
-    role = data.get("role", "Mid")
+    hero = data.get("hero")
+    role = data.get("role")
 
     prompt = f"""
 Ты профессиональный игрок в Dota 2. Объясни, как играть на герое {hero} в роли {role}.
